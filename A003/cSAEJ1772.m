@@ -69,19 +69,19 @@ classdef cSAEJ1772 < handle
     methods(Access = private) % app initiliaing functions
 
         function init(obj)
-            % obj.app.init(obj.view, obj.model, obj.control);
-            % obj.view.init(obj.app, obj.control, obj.model);
-            % obj.model.init(obj.app, obj.view, obj.control);
-            % obj.control.init(obj.app, obj.view, obj.model);
-            % 
-            % % update 순서 : model -> control -> view
-            % obj.model.update();
-            % obj.control.update();
-            % obj.view.update();
+            obj.app.init(obj.view, obj.model, obj.control);
+            obj.view.init(obj.app, obj.control, obj.model);
+            obj.model.init(obj.app, obj.view, obj.control);
+            obj.control.init(obj.app, obj.view, obj.model);
+
+            % update 순서 : model -> control -> view
+            obj.model.update();
+            obj.control.update();
+            obj.view.update();
         end
 
         function body(obj)
-            % obj.view.update();
+            obj.view.update();
         end
 
         function finish(obj)
