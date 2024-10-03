@@ -1,4 +1,4 @@
-classdef cSAEJ1772M < handle
+classdef cSAEJ1772M < handle %#function sae_j1772
     %CSAEJ1772M Summary of this class goes here
     %   Detailed explanation goes here
 
