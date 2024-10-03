@@ -86,8 +86,10 @@ classdef cSAEJ1772M < handle
             sm = simulation(simIn);
             % vars = sm.TunableVariables;
 
-            sm.setModelParameter(EnablePacing="on");
-            sm.setModelParameter(PacingRate="2");
+            if ~isdeployed()
+                sm.setModelParameter(EnablePacing="on");
+                sm.setModelParameter(PacingRate="2");
+            end
             % sm.initialize();
 
             p =  keys(sm.TunableVariables);

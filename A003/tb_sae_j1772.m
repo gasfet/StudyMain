@@ -18,15 +18,3 @@
     % sm.terminate();
     clear sm  simIn
 % end
-
-H = MIMOChamber;
-if isdeployed()
-    T = H.app;
-    if isa(T, 'MIMOChamberD') && isvalid(T)
-        uiwait(T.UIFigure);
-    end
-    delete(H);
-    clear("H");
-end
-
-% if exist('bp', 'var'), delete(bp); clear('bp');  end; bp = cSAEJ1772();
